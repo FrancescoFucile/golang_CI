@@ -1,4 +1,5 @@
-agent { docker { image 'golang'} }
+node {
+    agent { docker { image 'golang'} }
     stages {
         stage('integrate'){
             steps{
