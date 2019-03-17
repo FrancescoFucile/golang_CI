@@ -1,5 +1,4 @@
 node {
-    stages {
         stage('integrate'){
             steps{
                 checkout scm
@@ -7,6 +6,5 @@ node {
                 sh 'go build .'
                 sh 'go test'
             }
-        }
     }
 }
