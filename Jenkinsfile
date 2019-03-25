@@ -1,7 +1,7 @@
 node {
     def root = tool name: 'Go 1.8', type: 'go'
     stage('integrate'){
-        withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=${HOME}/go, GOBIN=$GOPATH/bin
+        withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=/, GOBIN=${GOPATH}/bin
 
 "]) {
             sh 'go version'
