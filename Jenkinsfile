@@ -3,6 +3,7 @@ node {
         stage('integrate'){
         withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
             sh 'mkdir bin'
+            sh 'ls'
             sh 'go version'
             checkout scm
             sh 'go get'
