@@ -2,7 +2,7 @@ node {
     def root = tool name: 'Go 1.8', type: 'go'
         stage('integrate'){
         dir('src') {
-            withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=/var/jenkins_home/workspace/proto_1/"]) {
+            withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}"]) {
                 sh 'ls'
                 sh 'go version'
                 checkout scm
