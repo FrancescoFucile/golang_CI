@@ -6,7 +6,6 @@ node() {
   stage ('test') {
    withEnv(["GOROOT=${root}", "GOPATH=${WORKSPACE}", "PATH+GO=${root}/bin:${WORKSPACE}/bin", "GOBIN=${WORKSPACE}/bin"]){
     sh 'go build'
-    sh 'go get'
     sh 'go test .'
    }
   }
