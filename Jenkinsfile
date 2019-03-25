@@ -3,6 +3,7 @@ node {
         stage('integrate'){
         dir('src') {
             withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin", "GOPATH=${WORKSPACE}/src"]) {
+                sh 'echo $GOPATH'
                 sh 'ls'
                 sh 'go version'
                 checkout scm
